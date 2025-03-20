@@ -11,6 +11,9 @@ function App() {
       <div>
         <div>
           <img src="/public/img/tsukuyomi01.png" alt="Tsukuyomi" className="fullscreen-image" />
+          <div className="text-window">
+            <p>すごい！よく頑張ったね！</p>
+          </div>
         </div>
       </div>
     </>
