@@ -1,20 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import HamburgerMenu from './components/HamburgerMenu';
+import PraiseTextWindow from './components/PraiseTextWindow';
+import ImageDisplay from './components/ImageDisplay';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-        <div>
-          <img src="/public/img/tsukuyomi01.png" alt="Tsukuyomi" className="fullscreen-image" />
-        </div>
-      </div>
-    </>
-  )
+    <div>
+      <ImageDisplay />
+      <PraiseTextWindow />
+      <HamburgerMenu />
+    </div>
+  );
 }
 
-export default App
+export default App;
