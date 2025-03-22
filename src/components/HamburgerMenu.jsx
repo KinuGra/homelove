@@ -16,6 +16,7 @@ function HamburgerMenu() {
             <button className="btn btn--share" onClick={() => setModalOpen(true)}>Share</button>
             <button className="btn btn--star">Star</button>
             <button className="btn btn--comment">Comment</button>
+            <button className="btn btn--activity">Activity</button> {/* Activityボタンを追加 */}
         </div>
       )}
       {modalOpen && <ActivityModal onClose={() => setModalOpen(false)} />} {/* モーダルを表示 */}
