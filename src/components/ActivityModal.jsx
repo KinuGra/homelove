@@ -29,7 +29,7 @@ function ActivityModal({ onClose }) {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>活動記録を入力</h2>
+        <h2>活動記録</h2>
         <form onSubmit={handleSubmit}>
           <label>
             日付:
@@ -49,9 +49,10 @@ function ActivityModal({ onClose }) {
               value={details} 
               onChange={(e) => setDetails(e.target.value)} 
               style={{ width: '100%', height: '100px' }} 
+              placeholder="例：JavaScript本格入門 Chap03" 
             />
           </label>
-          <button type="submit">保存</button>
+          <button type="submit" style={{ backgroundColor: 'blue', color: 'white' }}>保存</button>
           <button type="button" onClick={onClose}>キャンセル</button>
         </form>
       </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaRegClipboard, FaRegListAlt } from 'react-icons/fa'; // アイコンをインポート
 import './HamburgerMenu.css';
 import ActivityModal from './ActivityModal';
 import ActivityLogModal from './ActivityLogModal'; // 新しく作成するコンポーネントをインポート
@@ -15,10 +16,14 @@ function HamburgerMenu() {
       </button>
       {menuOpen && (
         <div className="menu-buttons">
-            <button className="btn btn--share" onClick={() => setModalOpen(true)}>Share</button>
+            <button className="btn btn--share" onClick={() => setModalOpen(true)}>
+              <FaRegClipboard /> {/* アイコンを表示 */}
+            </button>
             <button className="btn btn--star">Star</button>
             <button className="btn btn--comment">Comment</button>
-            <button className="btn btn--activity" onClick={() => setActivityLogOpen(true)}>Activity</button> {/* Activityボタンを追加 */}
+            <button className="btn btn--activity" onClick={() => setActivityLogOpen(true)}>
+              <FaRegListAlt /> {/* Activityアイコンを表示 */}
+            </button>
         </div>
       )}
       {modalOpen && <ActivityModal onClose={() => setModalOpen(false)} />}
