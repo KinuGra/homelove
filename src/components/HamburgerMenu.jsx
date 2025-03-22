@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './HamburgerMenu.css';
+import ActivityModal from './ActivityModal'; // 新しく作成するコンポーネントをインポート
 
 function HamburgerMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false); // モーダルの状態を管理
 
   return (
     <div className="actions-menu">
@@ -11,11 +13,12 @@ function HamburgerMenu() {
       </button>
       {menuOpen && (
         <div className="menu-buttons">
-            <button className="btn btn--share">Share</button>
+            <button className="btn btn--share" onClick={() => setModalOpen(true)}>Share</button>
             <button className="btn btn--star">Star</button>
             <button className="btn btn--comment">Comment</button>
         </div>
       )}
+      {modalOpen && <ActivityModal onClose={() => setModalOpen(false)} />} {/* モーダルを表示 */}
     </div>
   );
 }
