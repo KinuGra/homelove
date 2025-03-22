@@ -5,9 +5,10 @@ import { geminiResponse } from '../feat/gemini';
 function PraiseTextWindow() {
   const [praiseText, setPraiseText] = useState('わくわく');
 
+  // コンポーネントがマウントされたときに、Geminiにリクエストを送信して褒め言葉を取得する
   useEffect(() => {
     const fetchPraiseText = async () => {
-      const prompt = "あなたは女の子です。勉強している人を褒めてください。15文字以内";
+      const prompt = "あなたは女の子です。今日も一日頑張ってほしいと伝えて。20文字以内";
       const response = await geminiResponse(prompt);
       setPraiseText(response);
     };
