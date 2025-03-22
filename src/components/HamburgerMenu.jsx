@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './HamburgerMenu.css';
-import ActivityModal from './ActivityModal'; // 新しく作成するコンポーネントをインポート
+import ActivityModal from './ActivityModal';
+import ActivityLogModal from './ActivityLogModal'; // 新しく作成するコンポーネントをインポート
 
 function HamburgerMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false); // モーダルの状態を管理
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activityLogOpen, setActivityLogOpen] = useState(false); // 活動記録モーダルの状態を管理
 
   return (
     <div className="actions-menu">
@@ -16,10 +18,11 @@ function HamburgerMenu() {
             <button className="btn btn--share" onClick={() => setModalOpen(true)}>Share</button>
             <button className="btn btn--star">Star</button>
             <button className="btn btn--comment">Comment</button>
-            <button className="btn btn--activity">Activity</button> {/* Activityボタンを追加 */}
+            <button className="btn btn--activity" onClick={() => setActivityLogOpen(true)}>Activity</button> {/* Activityボタンを追加 */}
         </div>
       )}
-      {modalOpen && <ActivityModal onClose={() => setModalOpen(false)} />} {/* モーダルを表示 */}
+      {modalOpen && <ActivityModal onClose={() => setModalOpen(false)} />}
+      {activityLogOpen && <ActivityLogModal onClose={() => setActivityLogOpen(false)} />} {/* 活動記録モーダルを表示 */}
     </div>
   );
 }

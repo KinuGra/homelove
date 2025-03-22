@@ -20,3 +20,27 @@ export async function saveToDynamoDB(activity) {
     console.error("Error saving activity:", error);
   }
 }
+
+export async function fetchFromDynamoDB() {
+  const url = "https://x277ucwfldccfj47exdyqf22oq0rxovk.lambda-url.us-west-2.on.aws/items";
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log("Activities fetched:", result);
+    return result;
+  } catch (error) {
+    console.error("Error fetching activities:", error);
+    return [];
+  }
+}
