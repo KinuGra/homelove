@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import './ActivityModal.css';
+import { saveToDynamoDB } from '../feat/lambda';
+import { v4 as uuidv4 } from 'uuid';
 
 function ActivityModal({ onClose }) {
   const [date, setDate] = useState('');
@@ -14,8 +16,13 @@ function ActivityModal({ onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // ここで活動記録を保存する処理を追加できます
-    console.log({ date, hours, minutes, details });
+    const activity = {
+      id: uuidv4(), // uuidを使用してIDを生成
+      date: new Date().toISOString(),
+      learningTime: `${hours} hours ${minutes} minutes`, // ここで適切な学習時間を設定する
+      detail: details // ここで適切な詳細を設定する
+    };
+    saveToDynamoDB(activity);
     onClose();
   };
 
