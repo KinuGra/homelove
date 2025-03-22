@@ -1,8 +1,6 @@
-import './ImageDisplay.css';
-
-function ImageDisplay() {
+function ImageDisplay({ imageUrl }) {
   return (
-    <img src="/public/img/tsukuyomi01.png" alt="Tsukuyomi" className="fullscreen-image" />
+    <img src={imageUrl} alt="Selected Character" className="fullscreen-image" />
   );
 }
 
