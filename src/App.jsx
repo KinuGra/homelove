@@ -5,13 +5,17 @@ import PraiseTextWindow from './components/PraiseTextWindow';
 import ImageDisplay from './components/ImageDisplay';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [praiseText, setPraiseText] = useState('わくわく');
+
+  const updatePraiseText = (text) => {
+    setPraiseText(text);
+  };
 
   return (
     <div>
       <ImageDisplay />
-      <PraiseTextWindow />
-      <HamburgerMenu />
+      <PraiseTextWindow praiseText={praiseText} setPraiseText={setPraiseText} /> {/* setPraiseTextを渡す */}
+      <HamburgerMenu updatePraiseText={updatePraiseText} />
     </div>
   );
 }

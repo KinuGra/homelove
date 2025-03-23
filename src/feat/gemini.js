@@ -10,7 +10,7 @@ let resCount = 0;
 
 export async function geminiResponse(prompt) {
     try {
-        console.log("gemini api : " + resCount++);
+        console.log("gemini api : " + ++resCount);
         const result = await model.generateContent(prompt);
         return result.response.text();
     } catch (error) {

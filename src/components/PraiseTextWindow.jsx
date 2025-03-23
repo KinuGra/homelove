@@ -1,11 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './PraiseTextWindow.css';
 import { geminiResponse } from '../feat/gemini';
 
-function PraiseTextWindow() {
-  const [praiseText, setPraiseText] = useState('わくわく');
-
-  // コンポーネントがマウントされたときに、Geminiにリクエストを送信して褒め言葉を取得する
+function PraiseTextWindow({ praiseText, setPraiseText }) { // setPraiseTextを受け取る
   useEffect(() => {
     const fetchPraiseText = async () => {
       const prompt = "あなたは女の子です。今日も一日頑張ってほしいと伝えて。20文字以内";
@@ -14,7 +11,7 @@ function PraiseTextWindow() {
     };
 
     fetchPraiseText();
-  }, []);
+  }, [setPraiseText]); // setPraiseTextが変更されたときのみ実行
 
   return (
     <div className="text-window">
