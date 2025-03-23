@@ -22,8 +22,8 @@ function HamburgerMenu({ updatePraiseText }) { // updatePraiseTextを受け取�
             <button className="btn btn--activity" onClick={() => setActivityLogOpen(true)}>
               <FaRegListAlt /> {/* Activityアイコンを表示 */}
             </button>
-            <button className="btn btn--star">Star</button>
-            <button className="btn btn--comment">Comment</button>
+            {/* <button className="btn btn--star">Star</button>
+            <button className="btn btn--comment">Comment</button> */}
 
         </div>
       )}
