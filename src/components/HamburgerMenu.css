@@ -79,3 +79,7 @@
 .btn--comment {
   background: #16a085;
 }
+
+.btn--activity {
+  background-color: rgb(68, 208, 255); /* 色を青色に変更 */
+}

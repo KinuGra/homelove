@@ -1,8 +1,11 @@
+import React from 'react';
+import tsukuyomi from '/img/tsukuyomi01.png'; // パスを修正
+
 import './ImageDisplay.css';
 
 function ImageDisplay() {
   return (
-    <img src="/public/img/tsukuyomi01.png" alt="Tsukuyomi" className="fullscreen-image" />
+    <img src="/img/tsukuyomi01.png" alt="Tsukuyomi" className="fullscreen-image" />
   );
 }
 
