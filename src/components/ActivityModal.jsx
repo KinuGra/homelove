@@ -3,6 +3,7 @@ import './ActivityModal.css';
 import { saveToDynamoDB } from '../feat/lambda';
 import { v4 as uuidv4 } from 'uuid';
 import { geminiResponse } from '../feat/gemini'; // geminiResponseをインポート
+import { speak } from '../feat/audio';
 
 function ActivityModal({ onClose, updatePraiseText }) { // updatePraiseTextを受け取る
   const [date, setDate] = useState('');
@@ -27,6 +28,7 @@ function ActivityModal({ onClose, updatePraiseText }) { // updatePraiseTextを�
     const prompt = `あなたは女の子です。${details}を${hours}時間${minutes}分も頑張ったことを褒めてください。30文字以内`;
     const response = await geminiResponse(prompt);
     updatePraiseText(response); // PraiseTextWindowの内容を更新
+    speak(response, 17); // テキストを発音
     onClose();
   };
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './PraiseTextWindow.css';
 import { geminiResponse } from '../feat/gemini';
+import { speak } from '../feat/audio'; // speak関数をインポート
 
 function PraiseTextWindow({ praiseText, setPraiseText }) { // setPraiseTextを受け取る
   useEffect(() => {
