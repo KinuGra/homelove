@@ -46,17 +46,19 @@ git clone
 cd homelove
 ```
 3. 環境変数を設定
-`.env`ファイルを作成し、以下の環境変数を設定してください。
+<br>`.env`ファイルを作成し、以下の環境変数を設定してください。
 API_KEYにはGoogle Generative AI（Gemini API）のAPIキーを設定してください。
 ```bash
 VITE_GEMINI_API_KEY=API_KEY
 ```
-
-3. 依存関係をインストール
+4. VOICEVOX ENGINEの起動
+<br>VOICEVOX ENGINEのソフトを起動してください。
+インストールがまだの場合は、[こちら](https://voicevox.hiroshiba.jp/)からインストールしてください。
+5. 依存関係をインストール
 ```bash
 npm install
 ```
-4. ローカルでアプリケーションを実行
+6. ローカルでアプリケーションを実行
 ```bash
 npm run dev
 ```
@@ -69,4 +71,4 @@ npm run dev
 
 ■イラスト素材：えみゃコーラ様（[配布URL](https://tyc.rei-yumesaki.net/material/illust/)）
 
-■音声合成ソフト：VOICEVOX ENGINE
+■音声合成ソフト：[VOICEVOX ENGINE](https://voicevox.hiroshiba.jp/)
