@@ -1,12 +1,49 @@
-# React + Vite
+# ほめらぶ
+![image](homelove.png)
+<p align="right">(<a href="credit">クレジット表記へ</a>)</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 概要
+Homeloveは、ユーザーが日々の活動記録を保存し、その活動に応じて女の子が褒めてくれることでモチベーションを向上させるアプリです。ユーザーは学習時間や活動内容を記録し、記録に基づいて生成された褒め言葉を音声で聞くことができます。
 
-Currently, two official plugins are available:
+# 主な機能
+- **活動記録の保存**
+<br>ユーザーは日付、学習時間、活動内容を入力して活動を記録できます。記録された活動はDynamoDBに保存されます。
+- **可愛いキャラクターが褒めてくれる**
+<br>記録された活動内容に基づいて、Gemini APIを使用して褒め言葉を生成します。
+- **合成音声による読み上げ**
+<br>生成された褒め言葉を音声合成し、ユーザーに再生します。
+- **活動記録の表示**
+<br>保存された活動記録を一覧表示し、学習時間に応じたバーで視覚的に表示します。
+- **キャラクターが動く**
+<br>自然な感じでキャラクターが動きます
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 技術スタック
 
-## Expanding the ESLint configuration
+![image](homelove_architecture.jpeg)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**
+再利用可能なUIコンポーネント
+- **Vite**
+高速な開発サーバー、ホットリロード
+- **AWS Lambda**
+サーバーレスアーキテクチャを採用し、スケーラブルでコスト効率の高いバックエンドを実現。
+- **Amazon DynamoDB**
+高速でスケーラブルなNoSQLデータベースを使用し、ユーザーの活動記録を効率的に保存、取得。
+uuidライブラリでidを管理
+- **AWS Amplify**
+Amplifyでデプロイ
+- **VOICEVOX ENGINE**
+音声合成APIで生成された褒め言葉を音声合成し再生。
+- **Google Generative AI（Gemini API）**
+ユーザーの活動内容に基づいて、可愛い褒め言葉を生成。
+
+<div id="credit"></div>
+# クレジット表記
+
+この「ほめらぶ」では、フリー素材キャラクター「つくよみちゃん」（© Rei Yumesaki）を使用しています。
+
+[■つくよみちゃん公式サイト](https://tyc.rei-yumesaki.net/)
+
+■イラスト素材：えみゃコーラ様（[配布URL](https://tyc.rei-yumesaki.net/material/illust/)）
+
+■音声合成ソフト：VOICEVOX ENGINE
