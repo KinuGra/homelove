@@ -36,6 +36,31 @@ Amplifyでデプロイ
 - **Google Generative AI（Gemini API）**
 ユーザーの活動内容に基づいて、可愛い褒め言葉を生成。
 
+# ローカルでの実行方法
+1. リポジトリをクローン
+```bash
+git clone
+```
+2. ディレクトリに移動
+```bash
+cd homelove
+```
+3. 環境変数を設定
+`.env`ファイルを作成し、以下の環境変数を設定してください。
+API_KEYにはGoogle Generative AI（Gemini API）のAPIキーを設定してください。
+```bash
+VITE_GEMINI_API_KEY=API_KEY
+```
+
+3. 依存関係をインストール
+```bash
+npm install
+```
+4. ローカルでアプリケーションを実行
+```bash
+npm run dev
+```
+
 # クレジット表記
 
 この「ほめらぶ」では、フリー素材キャラクター「つくよみちゃん」（© Rei Yumesaki）を使用しています。
